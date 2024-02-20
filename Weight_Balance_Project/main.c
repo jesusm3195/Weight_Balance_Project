@@ -25,13 +25,13 @@
 #include  <stdlib.h>
 #include  <stdint.h>
  /*****Define constant macros for all known constants and aircraft data************/
-#define 	usefulLoad  	806.7
-#define 	FUELWEIGHT 		6 				/* 100LL weighs 6 lb/gallon                           */
-#define 	FUELBURN 		8  			   /* C172R burns approx. 8 gallons/hour                 */
-#define 	MAXWEIGHT 		2450          /*  Maximum Weight of a C172R                         */
-#define 	MINWEIGHT 		1656         /*   Minimum Weight of a C172R                        */
-#define 	CGUPPER 		46          /*Upper CG Limit based on CG Envelope Chart in the POH*/
-#define 	CGLOWER 		35         /*Lower CG Limit based on CG Envelope Chart in the POH*/
+#define 	usefulLoad  806.7
+#define 	FUELWEIGHT 		6 				          /* 100LL weighs 6 lb/gallon                           */
+#define 	FUELBURN 		  8  			         /* C172R burns approx. 8 gallons/hour                 */
+#define 	MAXWEIGHT 		2450           /*  Maximum Weight of a C172R                         */
+#define 	MINWEIGHT 		1656          /*   Minimum Weight of a C172R                        */
+#define 	CGUPPER 		   46          /*Upper CG Limit based on CG Envelope Chart in the POH*/
+#define 	CGLOWER 		   35         /*Lower CG Limit based on CG Envelope Chart in the POH*/
 
 /***********Create structures for all calculated weights, arms, and moments***********/
 struct Weights
@@ -76,22 +76,22 @@ enum PilotHeight
 };
 
 /*Declare the functions to calculate weight and balance and to check for conditions*/
-int 	sumMoments(struct Moments moment);
-int 	calculateWeight(struct Weights weight);
-int 	determinePilotArm();
-int 	determinecoPilotArm();
+int 	 sumMoments(struct Moments moment);
+int 	 calculateWeight(struct Weights weight);
+int 	 determinePilotArm();
+int 	 determinecoPilotArm();
 void 	checkBalance(int CG);
 void 	checkWeight(int totalWeight, int rampWeight, int fuel);
 void 	generateTable(struct Weights weight, struct Arms arm, struct Moments moment, int rampWeight, int takeoffWeight, int CG);
-void    clearScreen();
-void    WeightBalance();
+void  clearScreen();
+void  WeightBalance();
 
-/*Main function, wehre the program begins.*/
+/*Main function, where the program begins.*/
 int main(void)
 {
     /*Clear the screen at the start if the program.*/
     clearScreen();
-    /*Call the weight and balance function to begin calculations.*/
+    /*Call the weight and balance function to begin calculating.*/
     WeightBalance();
     return 0;
 }
@@ -199,9 +199,9 @@ int determinePilotArm()
     scanf_s("%d", (int*)&choice);
     switch (choice)
     {
-    case SHORT: 	arm = 34; break;
+    case SHORT: 	  arm = 34; break;
     case AVERAGE: 	arm = 37; break;
-    case TALL: 		arm = 46; break;
+    case TALL: 		  arm = 46; break;
     case NOPILOT: 	arm = 0; printf("There must be a pilot. Please try again.\n"); exit(0); break;
     default: printf("Invalid Entry."); exit(0);	break;
     }
@@ -219,10 +219,10 @@ int determinecoPilotArm()
     scanf_s("%d", (int*)&choice);
     switch (choice)
     {
-    case SHORT: 	arm = 34;	break;
+    case SHORT: 	  arm = 34;	break;
     case AVERAGE: 	arm = 37;	break;
-    case TALL: 		arm = 46;	break;
-    case NOPILOT: 	arm = 0;    break;
+    case TALL: 		  arm = 46;	break;
+    case NOPILOT: 	arm = 0;  break;
     default: printf("Invalid Entry."); exit(0);	break;
     }
     return arm;
