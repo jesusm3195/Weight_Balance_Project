@@ -25,13 +25,13 @@
 #include  <stdlib.h>
 #include  <stdint.h>
  /*****Define constant macros for all known constants and aircraft data************/
-#define 	usefulLoad  806.7
-#define 	FUELWEIGHT 		6 				          /* 100LL weighs 6 lb/gallon                           */
-#define 	FUELBURN 		  8  			         /* C172R burns approx. 8 gallons/hour                 */
-#define 	MAXWEIGHT 		2450           /*  Maximum Weight of a C172R                         */
-#define 	MINWEIGHT 		1656          /*   Minimum Weight of a C172R                        */
-#define 	CGUPPER 		   46          /*Upper CG Limit based on CG Envelope Chart in the POH*/
-#define 	CGLOWER 		   35         /*Lower CG Limit based on CG Envelope Chart in the POH*/
+#define 	usefulLoad  806.7       //Useful load in lbs.
+#define 	FUELWEIGHT 		6 				    //100LL weighs 6 lb/gallon                           
+#define 	FUELBURN 		  8  			   //C172R burns approx. 8 gallons/hour                 
+#define 	MAXWEIGHT 		2450     //Maximum Weight of a C172R                         
+#define 	MINWEIGHT 		1656    //Minimum Weight of a C172R                        
+#define 	CGUPPER 		   46    //Upper CG Limit based on CG Envelope Chart in the POH
+#define 	CGLOWER 		   35   //Lower CG Limit based on CG Envelope Chart in the POH*/
 
 /***********Create structures for all calculated weights, arms, and moments***********/
 struct Weights
